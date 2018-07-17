@@ -1,0 +1,7 @@
+html,
+body {
+  font-family: sans-serif;
+  height: calc(100% + 150px);
+  margin: 0;
+  padding: 0;
+}

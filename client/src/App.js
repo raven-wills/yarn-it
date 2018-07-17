@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import logo from "./logo.svg";
+import ScrollingNav from "./components/ScrollingNav";
 import "./App.css";
 
 class App extends Component {
@@ -15,20 +15,7 @@ class App extends Component {
     });
   }
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Yarn It</h1>
-        </header>
-        <div>Thanks for all the fish!</div>
-        <button onClick={this.getGetRequest}>GET</button>
-        <button onClick={this.getPostRequest}>POST</button>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    return <ScrollingNav />;
   }
 }
 

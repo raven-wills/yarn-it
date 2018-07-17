@@ -1,0 +1,31 @@
+/*
+ * Header
+ */
+.header {
+  border: 0;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  background-color: #65def1;
+  color: #f96900;
+  font-size: 20px;
+}
+
+.header .name {
+  font-size: 4em;
+  font-family: "Sacramento", cursive;
+  margin-top: 35px;
+}
+
+.header img {
+  height: 100px;
+  width: 100px;
+  transform: translateY(-12px);
+}
+
+.header .links a {
+  color: #1367e4;
+  font-size: 20px;
+  font-weight: lighter;
+  margin: 0 10px;
+}
