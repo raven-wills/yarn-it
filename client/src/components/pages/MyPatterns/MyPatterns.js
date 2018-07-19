@@ -6,7 +6,7 @@ export default class MyPatterns extends Component {
     return (
       <div>
         <ScrollingNav />
-        <h1>MyPatterns</h1>
+        <h1>My Patterns</h1>
       </div>
     );
   }

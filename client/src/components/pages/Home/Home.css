@@ -25,7 +25,7 @@ body {
   margin-top: 20px;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: repeat(2, 250px);
+  grid-template-rows: repeat(4, 250px);
   grid-gap: 20px;
 }
 
@@ -45,32 +45,47 @@ body {
   border: 5px solid rgba(0, 0, 0, 0.03);
   border-radius: 3px;
   font-size: 35px;
+  background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531974385/ravelry-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .item p {
   margin: 0 0 5px 0;
 }
 
-.item1 {
+.featured {
   background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531942710/featured.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.item2 {
+.clothing {
   background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531942930/sweater.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.item3 {
+.toysandhobbies {
   background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531944462/teddy-bear.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.item4 {
+.accessories {
   background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531943080/scarf.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.home {
+  background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531973649/house.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pet {
+  background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531973957/dog_1.svg);
   background-repeat: no-repeat;
   background-position: center;
 }

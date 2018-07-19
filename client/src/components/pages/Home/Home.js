@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "@reach/router";
+// import { Link } from "@reach/router";
 import axios from "axios";
 import ScrollingNav from "../../ScrollingNav";
 import "./Home.css";
+import CategoryListItem from "./CategoryListItem";
 
 export default class Home extends Component {
   state = {
@@ -20,13 +21,21 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="home">
+      <div>
         <ScrollingNav />
         <div className="container">
-          <Link to="/featured" className="item item1" />
-          <Link to="/clothes" className="item item2" />
-          <Link to="/toys" className="item item3" />
-          <Link to="/accessories" className="item item4" />
+          {/* <CategoryListItem
+            name="Featured"
+            permalink="featured"
+            className="item featured"
+          /> */}
+          {this.state.categories.map(category => (
+            <CategoryListItem
+              name={category.name}
+              permalink={category.permalink}
+              category={category}
+            />
+          ))}
         </div>
       </div>
     );
