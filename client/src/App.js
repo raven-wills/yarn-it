@@ -1,21 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ScrollingNav from "./components/ScrollingNav";
-import "./App.css";
+import Home from "./components/pages/Home/Home";
 
 class App extends Component {
-  getGetRequest() {
-    axios.get("/api/test").then(res => {
-      console.log("get test");
-    });
-  }
-  getPostRequest() {
-    axios.post("/api/test", { test: true }).then(res => {
-      console.log("post test");
-    });
-  }
+  savePattern() {}
+
   render() {
-    return <ScrollingNav />;
+    return <Home />;
+    // <button onClick={savePattern}>Submit</button>;
   }
 }
 

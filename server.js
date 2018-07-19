@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -14,6 +15,12 @@ app.get("/", (req, res) => {
 
 app.get("/api/test", (req, res) => {
   res.json(true);
+});
+
+app.get("/api/categories/", (req, res) => {
+  axios
+    .get("https://api.ravelry.com/pattern_categories/list.json")
+    .then(response => res.json(response.data));
 });
 
 app.post("/api/test", (req, res) => {

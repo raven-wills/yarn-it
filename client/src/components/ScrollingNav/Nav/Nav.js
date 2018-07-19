@@ -12,7 +12,7 @@ const Nav = props => {
       role="navigation"
       style={{ opacity, borderBottomWidth }}
     >
-      <div className="container">
+      <div className="navContainer">
         <div className="navbar-header">
           <button
             type="button"
@@ -31,7 +31,10 @@ const Nav = props => {
         <div className="collapse navbar-collapse" id="nav-id">
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <Link to="/patterns">Patterns</Link>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/mypatterns">My Patterns</Link>
             </li>
             <li>
               <Link to="/dictionary">Dictionary</Link>

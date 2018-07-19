@@ -15,7 +15,8 @@ const Header = props => (
       />
     </div>
     <div className="links">
-      <Link to="/patterns">Patterns</Link>
+      <Link to="/">Home</Link>
+      <Link to="/mypatterns">My Patterns</Link>
       <Link to="/dictionary">Dictionary</Link>
       <Link to="/about">About</Link>
     </div>

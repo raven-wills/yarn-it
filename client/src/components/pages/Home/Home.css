@@ -1,0 +1,76 @@
+:root {
+  --blue: #65def1;
+  --orange: #f96900;
+}
+
+html {
+  box-sizing: border-box;
+  font-weight: 900;
+  font-size: 10px;
+  color: var(--black);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+body {
+  height: 100vh;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(2, 250px);
+  grid-gap: 20px;
+}
+
+.container:before {
+  content: none !important;
+}
+
+.container:after {
+  content: none !important;
+}
+
+.item {
+  /* We center the contents of these items. You can also do this with flexbox too! */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+}
+
+.item p {
+  margin: 0 0 5px 0;
+}
+
+.item1 {
+  background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531942710/featured.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item2 {
+  background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531942930/sweater.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item3 {
+  background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531944462/teddy-bear.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item4 {
+  background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531943080/scarf.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
