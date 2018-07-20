@@ -25,7 +25,7 @@ body {
   margin-top: 20px;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: repeat(4, 250px);
+  grid-template-rows: repeat(3, 250px);
   grid-gap: 20px;
 }
 
@@ -45,7 +45,7 @@ body {
   border: 5px solid rgba(0, 0, 0, 0.03);
   border-radius: 3px;
   font-size: 35px;
-  background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531974385/ravelry-logo.png);
+  /* background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531974385/ravelry-logo.png); */
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -86,6 +86,12 @@ body {
 
 .pet {
   background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1531973957/dog_1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pattern-component {
+  background: url(https://res.cloudinary.com/dka27hlm7/image/upload/v1532045314/crochet.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
