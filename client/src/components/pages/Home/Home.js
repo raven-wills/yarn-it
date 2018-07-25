@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-// import { Link } from "@reach/router";
 import axios from "axios";
 import ScrollingNav from "../../ScrollingNav";
 import "./Home.css";
-import CategoryListItem from "./CategoryListItem";
+import CategoryList from "./CategoryList";
+import { Router } from "@reach/router";
+import Category from "../Category";
 
 export default class Home extends Component {
   state = {
@@ -12,7 +13,7 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios.get("/api/categories").then(response => {
-      console.log(response.data.pattern_categories.children);
+      // console.log(response.data.pattern_categories.children);
       this.setState({
         categories: response.data.pattern_categories.children
       });
@@ -23,20 +24,13 @@ export default class Home extends Component {
     return (
       <div>
         <ScrollingNav />
-        <div className="container">
-          {/* <CategoryListItem
-            name="Featured"
-            permalink="featured"
-            className="item featured"
-          /> */}
-          {this.state.categories.map(category => (
-            <CategoryListItem
-              name={category.name}
-              permalink={category.permalink}
-              category={category}
-            />
-          ))}
-        </div>
+        <Router>
+          <CategoryList path="/" categories={this.state.categories} />
+          <Category
+            path="/category/:permalink"
+            categories={this.state.categories}
+          />
+        </Router>
       </div>
     );
   }
