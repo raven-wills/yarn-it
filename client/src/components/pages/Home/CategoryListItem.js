@@ -61,8 +61,9 @@ export default class Category extends Component {
             {this.props.name}
           </h1>
           <img
-            style={{ height: "150px", objectFit: "contain", marginTop: "0px" }}
+            style={{ height: "150px", objectFit: "contain", marginTop: "15px" }}
             src={source.background}
+            alt="main categories"
           />
         </CategoryCard>
       </Link>
@@ -74,4 +75,13 @@ const CategoryCard = styled(Card)`
   justify-content: flex-start;
   padding: 1rem;
   min-height: 250px;
+  box-shadow: 0 1px 3px rgba(144, 106, 137, 0.12),
+    0 1px 2px rgba(144, 106, 137, 0.24);
+  &:hover {
+    box-shadow: 0 10px 15px rgba(144, 106, 137, 0.18),
+      0 10px 20px rgba(144, 106, 137, 0.22);
+  }
+  img {
+    border: none;
+  }
 `;

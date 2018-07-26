@@ -17,7 +17,7 @@ const Header = props => (
     <div className="links">
       <Link to="/">Home</Link>
       <Link to="/mypatterns">My Patterns</Link>
-      <Link to="/dictionary">Dictionary</Link>
+      {/* <Link to="/dictionary">Dictionary</Link> */}
       <Link to="/about">About</Link>
     </div>
   </div>

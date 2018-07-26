@@ -1,6 +1,8 @@
 :root {
-  --blue: #65def1;
-  --orange: #f96900;
+  --blue: rgb(74, 197, 237);
+  --orange: rgb(239, 111, 82);
+  --black: #272727;
+  --purple: rgb(213, 189, 220);
 }
 
 body {
@@ -8,4 +10,8 @@ body {
   padding: 0;
   color: #272727;
   font-family: sans-serif;
+}
+
+button {
+  cursor: pointer;
 }

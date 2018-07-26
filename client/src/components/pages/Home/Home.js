@@ -7,6 +7,8 @@ import { Router } from "@reach/router";
 import Category from "../Category";
 import SubCategory from "../SubCategory";
 
+// import { getUserData } from "../../../services/auth";
+
 export default class Home extends Component {
   state = {
     categories: []

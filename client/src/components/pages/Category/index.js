@@ -22,7 +22,10 @@ export default class Category extends Component {
     return (
       <div>
         <h1 style={titleStyle}>{category.long_name}</h1>
-        <SubCategoryList subcategories={category.children} />
+        <SubCategoryList
+          parentcategory={category.permalink}
+          subcategories={category.children}
+        />
       </div>
     );
   }

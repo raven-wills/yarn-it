@@ -4,6 +4,7 @@ import MyPatterns from "../pages/MyPatterns/MyPatterns";
 import Dictionary from "../pages/Dictionary/Dictionary";
 import About from "../pages/About/About";
 import Home from "../pages/Home/Home";
+import Callback from "../Callback";
 
 export default () => {
   return (
@@ -12,6 +13,7 @@ export default () => {
       <MyPatterns path="/mypatterns" />
       <Dictionary path="/dictionary" />
       <About path="/about" />
+      <Callback path="/callback" />
     </Router>
   );
 };

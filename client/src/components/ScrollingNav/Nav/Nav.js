@@ -36,10 +36,10 @@ const Nav = props => {
             <li>
               <Link to="/mypatterns">My Patterns</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/dictionary">Dictionary</Link>
-            </li>
-            <li>
+            </li> */}
+            <li className="about">
               <Link to="/about">About</Link>
             </li>
           </ul>

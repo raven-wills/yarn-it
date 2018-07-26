@@ -5,7 +5,9 @@
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@reach/router": "^1.1.1",
+    "auth0-js": "^9.7.3",
     "axios": "^0.18.0",
+    "jwt-decode": "^2.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",

@@ -1,0 +1,6 @@
+{
+  "alias": "yarnit",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

@@ -6,8 +6,8 @@
   display: inline-block;
   text-align: center;
   width: 100%;
-  background-color: #65def1;
-  color: #f96900;
+  background-color: var(--blue);
+  color: var(--orange);
   font-size: 20px;
 }
 

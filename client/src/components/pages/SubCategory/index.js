@@ -1,63 +1,80 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import axios from "axios";
-import Card from "../../elements/Card";
+import Pattern from "./Pattern";
+import { getUserData, login, logout } from "../../../services/auth.js";
 
 export default class SubCategory extends Component {
   state = {
-    patterns: []
+    patterns: [],
+    user: {},
+    loggedIn: getUserData() ? true : false,
+    savedPatternIds: []
   };
 
   componentDidMount() {
     axios.get("/api/subcategory/" + this.props.subcategory).then(response => {
-      const patterns = response.data.patterns.filter(pattern => pattern.free);
       this.setState({
-        patterns
+        patterns: response.data.patterns
       });
     });
+    const user = getUserData();
+    if (user) {
+      axios.get(`/api/getuser/${user.sub}`).then(response => {
+        const user = response.data.user;
+        const savedPatternIds = Object.values(response.data.savedPatterns).map(
+          pattern => pattern.id
+        );
+        this.setState({
+          user,
+          loggedIn: true,
+          savedPatternIds
+        });
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.subcategory !== prevProps.subcategory) {
+      axios.get("/api/subcategory/" + this.props.subcategory).then(response => {
+        this.setState({
+          patterns: response.data.patterns
+        });
+      });
+    }
   }
 
   render() {
-    const name = this.props.location.state.subcategory.long_name;
-    console.log(this.props.location.state.subcategory);
-
-    if (this.state.patterns.length === 0) {
-      return (
-        <div style={{ textAlign: "center" }}>
-          <h1>{name}</h1>
-          <h2>Loading...</h2>
-        </div>
-      );
-    }
     return (
-      <Fragment>
-        <h1 style={{ textAlign: "center" }}>{name}</h1>
+      <div style={{ width: "100%" }} className="container">
+        {this.state.loggedIn ? (
+          <button className="btn btn-primary" onClick={() => logout()}>
+            Log out
+          </button>
+        ) : (
+          <button className="btn btn-primary" onClick={() => login()}>
+            Log in to save patterns
+          </button>
+        )}
+
         <div
           style={{
             display: "flex",
             justifyContent: "center",
-            flexWrap: "wrap",
-            margin: "auto",
-            width: "85%"
+            flexWrap: "wrap"
           }}
         >
-          {this.state.patterns.map(pattern => {
+          {this.state.patterns.map(patternData => {
             return (
-              <Card key={pattern.id}>
-                <h3>{pattern.name}</h3>
-                <a
-                  href={
-                    "https://www.ravelry.com/patterns/library/" +
-                    pattern.permalink
-                  }
-                >
-                  <img src={pattern.first_photo.medium_url} alt="pattern" />
-                </a>
-                <button>Save</button>
-              </Card>
+              <Pattern
+                saved={this.state.savedPatternIds.includes(patternData.id)}
+                canSave={this.state.loggedIn}
+                key={patternData.id}
+                patternData={patternData}
+              />
             );
           })}
         </div>
-      </Fragment>
+      </div>
     );
   }
 }
