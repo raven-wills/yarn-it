@@ -5,6 +5,7 @@ import "./Home.css";
 import CategoryList from "./CategoryList";
 import { Router } from "@reach/router";
 import Category from "../Category";
+import SubCategory from "../SubCategory";
 
 export default class Home extends Component {
   state = {
@@ -13,9 +14,8 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios.get("/api/categories").then(response => {
-      // console.log(response.data.pattern_categories.children);
       this.setState({
-        categories: response.data.pattern_categories.children
+        categories: response.data
       });
     });
   }
@@ -27,7 +27,11 @@ export default class Home extends Component {
         <Router>
           <CategoryList path="/" categories={this.state.categories} />
           <Category
-            path="/category/:permalink"
+            path="/categories/:category"
+            categories={this.state.categories}
+          />
+          <SubCategory
+            path="/subcategory/:subcategory"
             categories={this.state.categories}
           />
         </Router>

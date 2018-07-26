@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import Nav from "./Nav";
 import Header from "./Header";
-// import Content from "./components/Content";
 import "./ScrollingNav.css";
 
 class ScrollingNav extends React.Component {

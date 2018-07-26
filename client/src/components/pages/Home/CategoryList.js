@@ -8,6 +8,7 @@ export default class CategoryList extends Component {
       <div className="container">
         {this.props.categories.map(category => (
           <CategoryListItem
+            key={category.name}
             name={category.name}
             permalink={category.permalink}
             category={category}

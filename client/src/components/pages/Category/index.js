@@ -8,7 +8,7 @@ const titleStyle = {
 export default class Category extends Component {
   getCategory() {
     return this.props.categories.find(category => {
-      return category.permalink === this.props.permalink;
+      return category.permalink === this.props.category;
     });
   }
 

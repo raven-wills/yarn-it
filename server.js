@@ -9,24 +9,26 @@ require("dotenv").config();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  res.send("hi");
-});
-
-app.get("/api/test", (req, res) => {
-  res.json(true);
-});
-
 app.get("/api/categories/", (req, res) => {
   axios
     .get("https://api.ravelry.com/pattern_categories/list.json")
-    .then(response => res.json(response.data));
+    .then(response => {
+      res.json(response.data.pattern_categories.children);
+    });
 });
 
-app.post("/api/test", (req, res) => {
-  console.log(req.body);
-  req.body.received = true;
-  res.json(req.body);
+app.get("/api/subcategory/:permalink", (req, res) => {
+  const query = `pc=${
+    req.params.permalink
+  }&page_size=10&availability=free&sort=rating`;
+  axios
+    .get(`https://api.ravelry.com/patterns/search.json?${query}`, {
+      auth: {
+        username: process.env.RAV_USERNAME,
+        password: process.env.RAV_PASSWORD
+      }
+    })
+    .then(response => res.json(response.data));
 });
 
 if (process.env.NODE_ENV === "production") {

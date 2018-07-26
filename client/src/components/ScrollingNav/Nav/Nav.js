@@ -24,9 +24,9 @@ const Nav = props => {
             <span className="icon-bar" />
             <span className="icon-bar" />
           </button>
-          <a href="#" className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             Yarn it!
-          </a>
+          </Link>
         </div>
         <div className="collapse navbar-collapse" id="nav-id">
           <ul className="nav navbar-nav navbar-right">

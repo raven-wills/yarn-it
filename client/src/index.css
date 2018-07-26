@@ -1,5 +1,11 @@
+:root {
+  --blue: #65def1;
+  --orange: #f96900;
+}
+
 body {
   margin: 0;
   padding: 0;
+  color: #272727;
   font-family: sans-serif;
 }

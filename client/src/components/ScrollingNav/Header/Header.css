@@ -24,8 +24,9 @@
 }
 
 .header .links a {
-  color: #1367e4;
+  color: var(--orange);
   font-size: 20px;
   font-weight: lighter;
   margin: 0 10px;
+  text-decoration: none;
 }
